@@ -1,0 +1,316 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Estilos para el encabezado */
+.header {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Altura fija del header */
+    background-image: url('/img/fondo\ header.png'); /* Cambia la URL a la imagen de fondo deseada */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Contenedor de la navegación principal */
+.nav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.233); /* Fondo semi-transparente */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+/* Contenedor del logo y texto */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-text h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-text p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Estilos para la navegación horizontal */
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+    background-color: #555;
+}
+
+/* Estilos para el botón de contacto */
+.contact-btn {
+    background-color: #1084EB;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #1084EB;
+}
+
+/* Contenido del encabezado centrado */
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    color: white;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header-content p {
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+
+/* Estilos para el menú lateral */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+.side-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.side-menu a:hover {
+    background-color: #555;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el ícono del menú lateral */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Estilos para los enlaces en el menú de navegación */
+.nav a, .side-menu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
+    overflow: hidden;
+}
+
+.nav a::after, .side-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px; /* Ajusta el grosor de la línea */
+    width: 0;
+    background-color: #1084EB; /* Color de la línea */
+    transition: width 0.3s ease;
+}
+
+/* Efecto hover: extender la línea */
+.nav a:hover::after, .side-menu a:hover::after {
+    width: 100%;
+}
+/* Estilos para el rectángulo de información */
+.info-box {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.664);
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para cada elemento de información */
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.info-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.info-text {
+    font-size: 16px;
+}
+
+/* Estilos para la línea divisoria entre secciones */
+.info-divider {
+    height: 30px;
+    border-left: 1px solid rgb(132, 131, 131);
+    margin: 0 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 10px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-content h1 {
+        font-size: 25px;
+        width: 300px;
+    }
+
+    .header-content p {
+        font-size: 14px;
+    }
+}
+
+/* Estilos para la sección de información */
+.info-section {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Contenedor de la información con fondo */
+.info-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: url('/img/img\ 2.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    position: relative;
+}
+
+/* Pseudo-elemento para opacidad del fondo */
+.info-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.info-container > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos del título en la sección de información */
+.info-section h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos del párrafo en la sección de información */
+.info-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 650px;
+    margin: 0 auto;
+}
